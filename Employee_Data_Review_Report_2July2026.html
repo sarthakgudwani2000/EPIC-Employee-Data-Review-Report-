@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Data Review Report — Aiprus Software</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #1a1a1a; background: #fff; padding: 2rem; max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .meta { font-size: 12px; color: #666; line-height: 1.8; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd; }
+  .section { margin-bottom: 2.5rem; }
+  .section-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1px solid #bbb; font-size: 11px; font-weight: 600; color: #666; flex-shrink: 0; }
+  hr { border: none; border-top: 1.5px solid #ddd; margin: 4px 0 14px; }
+  .subsec { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #666; margin: 1.25rem 0 0.6rem; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+  th { text-align: left; font-size: 11px; font-weight: 600; color: #555; padding: 6px 8px; border-bottom: 1.5px solid #ccc; background: #f5f5f5; }
+  td { padding: 6px 8px; border-bottom: 0.5px solid #e0e0e0; vertical-align: top; line-height: 1.4; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 99px; }
+  .fixed   { background: #d4edda; color: #155724; }
+  .warn    { background: #fff3cd; color: #856404; }
+  .info-box { border-left: 3px solid #0d6efd; background: #e8f0fe; padding: 10px 12px; border-radius: 0 4px 4px 0; margin: 8px 0; font-size: 12px; line-height: 1.6; }
+  .warn-box { border-left: 3px solid #ffc107; background: #fff8e1; padding: 10px 12px; border-radius: 0 4px 4px 0; margin: 8px 0; font-size: 12px; line-height: 1.6; }
+  .mono { font-family: Consolas, monospace; font-size: 11px; }
+  .warn-text { color: #856404; font-size: 12px; }
+  .shift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .shift-card { background: #f8f8f8; border: 1px solid #ddd; border-radius: 6px; padding: 12px; }
+  .shift-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; font-family: Consolas, monospace; }
+  .shift-row { font-size: 12px; color: #666; margin-top: 3px; }
+  .shift-row span { color: #1a1a1a; font-weight: 600; }
+  .footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+
+<h1>Employee Data Review Report</h1>
+<div class="meta">
+  Scope: Master Employee List vs EPIC HRMS Database
+</div>
+
+<!-- SECTION 1: Reporting Manager -->
+<div class="section">
+  <div class="section-title"><span class="num">1</span> Reporting Manager — Data Review</div>
+  <hr>
+
+  <div class="subsec">Corrected in database</div>
+  <table>
+    <thead><tr><th>Badge</th><th>Employee name</th><th>Company</th><th>Reporting manager assigned</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">100064</td><td>Bhuwan Chandra</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100565</td><td>Sumant Vishwakarma</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100590</td><td>Deepak Raghav</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100635</td><td>Gyan Pandey</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100741</td><td>Shivam Chauhan</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100800</td><td>Manish Yadav</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">100963</td><td>Avinash Singh</td><td>KLR</td><td>Shyambir (100933)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">320001</td><td>Trilok Sevda</td><td>Shloka Valves</td><td>Vipan (320007)</td><td><span class="badge fixed">Fixed</span></td></tr>
+      <tr><td class="mono">330062</td><td>Pradeep Kumar</td><td>Shloka Enterprises</td><td>Vipan (320007)</td><td><span class="badge fixed">Fixed</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="subsec" style="margin-top:1.5rem;">Name variation in master list</div>
+  <div class="info-box">The master list has name variations (missing middle name, spelling difference) for the following reporting managers. The name in the system is the accurate and complete name.</div>
+  <table>
+    <thead><tr><th>Badge(s)</th><th>Employee(s)</th><th>Reporting Manager Name</th><th>Employee Name</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">100014, 100030, 100322, 100790, 100795, 100922</td><td>Purushottam Singh &amp; others</td><td>Lal singh Rawat</td><td>Lal Rawat (100080)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">100264, 100710, 100932</td><td>Vishnu Sharma &amp; others</td><td>Santosh Kehri</td><td>Santosh Keshri (100007)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">150027, 150093, 150095, 150225, 150235, 150264</td><td>Hemant Kumar &amp; others</td><td>Sanjeev Kumar Sharma</td><td>Sanjeev Sharma (150035)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">150086, 150233</td><td>Rajnish Ranjan, Ramakant Agrawal</td><td>Umesh Kumar</td><td>Umesh Singh (150093)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">150240</td><td>Ankit</td><td>Sushil Kumar Chouhan</td><td>Sushil Chouhan (150229)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">150258</td><td>Roushan Kumar</td><td>Sunil Singh</td><td>Sunil Kumar (150041)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+      <tr><td class="mono">330055</td><td>Lalit</td><td>Bhanu Prakash Joshi</td><td>Bhanu Joshi (330054)</td><td><span class="badge warn">Name mismatch</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="subsec" style="margin-top:1.5rem;">Reporting manager not found in system</div>
+  <div class="warn-box"><strong>The following employees have a reporting manager listed in the master sheet that does not exist as an employee record in the system.</strong> Please note that only one reporting manager is allowed per employee — the system does not support multiple reporting managers for a single employee.</div>
+  <table>
+    <thead><tr><th>Badge</th><th>Employee name</th><th>Company</th><th>RM in master list</th><th>Issue</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">100143</td><td>Amit Khanna</td><td>KLR</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">310004</td><td>Ramandeep Singh Juneja</td><td>Comfort Trims</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">310060</td><td>Sachin Tripathi</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">320010</td><td>Hitesh Wadhera</td><td>Shloka Valves</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330000</td><td>Aman Chatrath</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330001</td><td>Gaurav Kashyap</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330008</td><td>Saket Agarwal</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330019</td><td>Yogesh Vashishtha</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330022</td><td>Ramesh Babu</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330036</td><td>Anil Tomar</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330037</td><td>Deepak Madaan</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330044</td><td>Harbir Singh</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330047</td><td>Vijay Kumar</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">330056</td><td>Pathik Almoula</td><td>Shloka Enterprises</td><td>Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">100375</td><td>Rahul Chandak</td><td>KLR</td><td>P. Baranwal</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">100928</td><td>Sarthak Lakhera</td><td>KLR</td><td>Shashank Grey</td><td class="warn-text">Only "Shashank" exists (no last name) — please confirm</td></tr>
+      <tr><td class="mono">150110</td><td>Rohit Bhalla</td><td>Shloka Interiors</td><td>Shruti Kunal Malhotra</td><td class="warn-text">Not in employee records</td></tr>
+      <tr><td class="mono">150229</td><td>Sushil Chouhan</td><td>Shloka Interiors</td><td>Rohit Bhalla / Sanjeev Sharma / Pathik</td><td class="warn-text">Multiple names listed — only one reporting manager is allowed per employee</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 2: Shift -->
+<div class="section">
+  <div class="section-title"><span class="num">2</span> Shift name &amp; timings — KLR</div>
+  <hr>
+
+  <div class="subsec">KLR-G shift — renamed to avoid conflict</div>
+  <div class="info-box">
+    The <span class="mono">G</span> shift for KLR employees has been named <span class="mono">KLR-G</span> in the system. This is because a shift named <span class="mono">G</span> already exists for another company (Shloka Valves Pvt Ltd) with different working hour timings. To avoid any conflict between the two shifts, the KLR general shift has been renamed to <span class="mono">KLR-G</span>. The shift timings and hours have been corrected as per the master sheet.
+  </div>
+  <div class="shift-grid">
+    <div class="shift-card">
+      <div class="shift-name">G &nbsp;<span style="font-size:11px;font-weight:400;color:#666;">(Shloka Valves Pvt Ltd)</span></div>
+      <div class="shift-row">Timing: <span>09:00 – 17:30</span></div>
+      <div class="shift-row">Daily hours: <span>10:00</span></div>
+      <div class="shift-row">Weekly hours: <span>50:00</span></div>
+      <div class="shift-row">Employees assigned: <span>14</span></div>
+    </div>
+    <div class="shift-card">
+      <div class="shift-name">KLR-G &nbsp;<span style="font-size:11px;font-weight:400;color:#666;">(Krishna Landi Renzo India Pvt Ltd)</span></div>
+      <div class="shift-row">Timing: <span>09:00AM – 07:00PM</span></div>
+      <div class="shift-row">Daily hours: <span>10:00</span></div>
+      <div class="shift-row">Weekly hours: <span>60:00</span></div>
+      <div class="shift-row">Employees assigned: <span>27</span></div>
+    </div>
+  </div>
+
+  <div class="subsec" style="margin-top:1.5rem;">ROTATIONAL shift — clarification pending</div>
+  <div class="warn-box">
+    KLR and Shloka Valves employees on the <span class="mono">ROTATIONAL</span> shift rotate between A, B, and C shifts with different timings each cycle, so no fixed daily hour is applicable. However, the weekly working hours need to be confirmed to ensure correct attendance calculation.<br><br>
+    <strong>KLR rotational shift employees (22):</strong> A (06:00AM–02:00PM), B (02:30PM–11:00PM), C (11:00PM–06:00AM)<br>
+    <strong>Shloka Valves rotational shift employees (3):</strong> A (07:00–15:30), B (15:30–00:00), C (00:00–07:00)<br><br>
+    Please confirm the expected daily working hours (full time) and weekly working hours for rotational employees in each company so the system can be updated accordingly.
+  </div>
+</div>
+
+<!-- SECTION 3: Username -->
+<div class="section">
+  <div class="section-title"><span class="num">3</span> Username mismatch — Multi-company constraint</div>
+  <hr>
+  <div class="info-box">Since EPIC HRMS is currently on a <strong>single-tenant setup</strong>, all companies share the same system and login database. Due to this, an employee who is working across multiple companies would have the same username in both — which is not possible in a single-tenant setup as usernames must be globally unique. To handle this, a short company code has been appended to the username so that each account can be identified separately.</div>
+  <table>
+    <thead><tr><th>Badge</th><th>Employee name</th><th>Company</th><th>Username in master</th><th>Username in system</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">100481</td><td>Sonu</td><td>KLR</td><td class="mono">sonu.nan</td><td class="mono">sonu.nan<strong>.klr</strong></td></tr>
+      <tr><td class="mono">100529</td><td>Sandeep Kumar</td><td>KLR</td><td class="mono">sandeep.kumar</td><td class="mono">sandeep.kumar<strong>.klr</strong></td></tr>
+      <tr><td class="mono">100934</td><td>Arvind Kumar</td><td>KLR</td><td class="mono">arvind.kumar</td><td class="mono">arvind.kumar<strong>.klr</strong></td></tr>
+      <tr><td class="mono">150224</td><td>Arvind Kumar</td><td>Shloka Interiors</td><td class="mono">arvind.kumar</td><td class="mono">arvind.kumar<strong>.si</strong></td></tr>
+      <tr><td class="mono">320023</td><td>Sonu Yadav</td><td>Shloka Valves</td><td class="mono">sonu.nan</td><td class="mono">sonu.nan<strong>.sv</strong></td></tr>
+      <tr><td class="mono">330018</td><td>Sandeep Kumar</td><td>Shloka Enterprises</td><td class="mono">sandeep.kumar</td><td class="mono">sandeep.kumar<strong>.se</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">Prepared by Aiprus Software &nbsp;&middot;&nbsp; EPIC HRMS &nbsp;&middot;&nbsp; Production DB: 103.83.133.195</div>
+
+</body>
+</html>
